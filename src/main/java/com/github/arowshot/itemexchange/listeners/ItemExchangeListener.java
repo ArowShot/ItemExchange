@@ -39,8 +39,10 @@ public class ItemExchangeListener implements Listener{
 					ItemStack[] newMatrix = new ItemStack[inv.getMatrix().length];
 					for (int i = 0; i < inv.getMatrix().length; i++) {
 						ItemStack is = inv.getMatrix()[i];
-						if (is.getAmount() != 0) {
-							newMatrix[i] = is;
+						if(is != null) {
+							if (is.getAmount() != 0) {
+								newMatrix[i] = is;
+							}
 						}
 					}
 					inv.setMatrix(newMatrix);
